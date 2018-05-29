@@ -1,6 +1,6 @@
 # Litter Patrol
 
-In this assignment, you'll be building a litter patrol game -
+In this assignment, you'll be building a litter patrol game. Get points for "cleaning up" the trash!
 
 ## Learning Goals
 - Practice with `state` and `props`
@@ -27,3 +27,6 @@ Modify the `props` that are passed into `Trash.js` and the `Trash.js` component 
 ### Wave 2
 1. Fill in the `onTrashClicked` function to increment the points when the event handler is called.
 2. Tie this event handler function to the `Trash` component so that points are incremented whenever a **visible** trash is clicked.
+
+#### Attribution
+This assignment is based off a "whack-a-mole" game from [Code Platoon](https://codeplatoon.org/).
