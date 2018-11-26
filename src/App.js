@@ -19,10 +19,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <section className="overall-data">
+      <div className="game">
+        <section className="hud">
           <h1>Litter Patrol</h1>
-          <h2>Points: { this.state.points }</h2>
+          <h2>Litter Spotted: { this.state.points }</h2>
         </section>
       </div>
     );

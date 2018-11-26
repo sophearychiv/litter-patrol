@@ -6,11 +6,14 @@ body {
   background-color: #283618;
 }
 
-.bins {
+.hud {
   margin: 0px auto;
   width: 540px;
   background-color: grey;
   border-radius: 20%;
+}
+
+.game {
 }
 
 .bin {
