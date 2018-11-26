@@ -4,34 +4,64 @@
 
 body {
   background-color: #283618;
+  overflow: hidden;
 }
 
 .hud {
-  margin: 0px auto;
-  width: 540px;
-  background-color: grey;
-  border-radius: 20%;
+  z-index: 1000;
+  position: absolute
 }
 
 .game {
 }
 
-.bin {
-  width: 130px;
-  height: 130px;
-  background-color: #606C38;
-  border-radius: 50%;
-  border: 20px solid black;
-  float: left;
-  margin: 5px;
-  cursor: pointer;
+.level {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .trash {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  cursor: pointer;
+
+  animation-duration: 4s;
+  animation-name: trash-move;
+  animation-timing-function: linear;
+
+  position: absolute;
+  left: -50%;
+  display: inline;
+}
+
+.icon-trash {
   width: 120px;
   height: 120px;
+
+  margin: 65px auto 0 auto;
+  display: block;
+}
+
+.spotted-good {
+  background-color: rgba(0,255,0,0.3);
+}
+
+.spotted-bad {
+  background-color: rgba(255,0,0,0.3);
 }
 
 .overall-data {
   color: #FEFAE0;
+}
+
+@keyframes trash-move {
+  from {
+    left: -20%;
+  }
+
+  to {
+    left: 100%;
+  }
 }
