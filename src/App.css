@@ -9,7 +9,17 @@ body {
 
 .hud {
   z-index: 1000;
-  position: absolute
+  position: absolute;
+  width: 100vw;
+}
+
+.score {
+  margin-left: 2vw;
+}
+
+.logo {
+  margin: 10vh auto 0 auto;
+  display: block;
 }
 
 .game {

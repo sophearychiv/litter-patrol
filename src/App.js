@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import './App.css';
 import Trash from './components/Trash.js';
+import logo from './images/logo.png';
 
 class App extends Component {
   config = {
@@ -56,8 +57,8 @@ class App extends Component {
     return (
       <div className="game">
         <section className="hud">
-          <h1>Litter Patrol</h1>
-          <h2>Litter Spotted: { this.state.points }</h2>
+          <h2 className="score">Litter Spotted: { this.state.points }</h2>
+          <img className="logo" src={logo} alt="Litter Patrol logo" />
         </section>
 
         <section className="level">
