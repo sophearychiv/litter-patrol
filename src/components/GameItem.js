@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import '../App.css';
-import TrashIcons from '../TrashIcons.js';
+import ItemIcons from '../ItemIcons.js';
 
-class Trash extends Component {
+class GameItem extends Component {
   render() {
-    const trashStyle = {
+    const itemStyle = {
       bottom: `${this.props.height}px`, // use props.height to offset from the bottom of screen
       zIndex: this.props.layer, // use props.layer to set z-index, so we display ontop of background
     };
 
     // Update this to select the correct icon for each item
-    const icon = TrashIcons.rock;
+    const icon = ItemIcons.rock;
 
     return (
-      <div className="trash" style={trashStyle}>
-        <img src={icon} alt="Trash" className="icon-trash"></img>
+      <div className="game-item" style={itemStyle}>
+        <img src={icon} alt="Item" className="icon-item"></img>
       </div>
     );
   }
 }
 
-export default Trash;
+export default GameItem;
