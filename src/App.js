@@ -74,13 +74,15 @@ class App extends Component {
   // Implementation details \\
 
   tick(time) {
+    const newState = {};
+
     // Cull any objects that are expired
     const objects = this.state.objects.filter((obj) => {
       return obj.expiration !== null && obj.expiration > time;
     });
 
     if(objects.length !== this.state.objects.length) {
-      this.setState({ objects });
+      newState.objects = objects;
     }
 
     // Should we spawn a new object?
@@ -95,11 +97,14 @@ class App extends Component {
       }
 
       if(spawnDelta >= (1 / spawnRate) * 1000) {
-        this.setState({
-          objects: [...this.state.objects, this.spawnObject(time)],
-        });
+        newState.objects = [
+          ...(newState.objects || this.state.objects),
+          this.spawnObject(time),
+        ];
       }
     }
+
+    return newState;
   }
 
   spawnObject(time) {
@@ -154,17 +159,26 @@ class App extends Component {
 
   componentDidMount() {
     // Update the game state (active objects) at a fixed rate
-    this.tickInterval = setInterval(() => {
-      this.tick(Date.now());
-    }, 1000 / 8);
+    const update = () => {
+      const callback = () => {
+        this.updateTimer = setTimeout(update, 1000 / 8);
+      };
 
-    // Log state every 10 seconds
-    //setInterval(() => console.log(this.state), 10000);
+      const newState = this.tick(Date.now());
+
+      if(Object.keys(newState).length > 0) {
+        this.setState(newState, callback);
+      } else {
+        callback();
+      }
+    };
+
+    update();
   }
 
   componentWillUnmount() {
-    if(this.tickInterval !== null) {
-      clearInterval(this.tickInterval);
+    if(this.updateTimer !== null) {
+      clearInterval(this.updateTimer);
     }
   }
 }
