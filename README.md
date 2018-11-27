@@ -28,24 +28,25 @@ For this wave you will need to update the `GameItem` component to display the co
 
 Once you have an idea of what data is needed, update the `render` function in `App` to provide the necessary information as a prop to `GameItem`. After that, update the `render` function in `GameItem` to check the additional data and use the correct icon.
 
-### Wave 2 - Scoring Points
-For this wave you will begin to implement the game's logic and make it playable! The actual game logic that you must implement is as follows:
+### Wave 2 - Spotting Items
+For this wave you will begin to implement the game logic by allowing the player to spot items as they scroll by. Players can "spot" an item by clicking on it, and the game gives immediate feedback on whether the item was litter.
 
-* When a player clicks on a game item that has the type 'litter', their score should increase by 1 point.
-* When a player clicks on a game item that has any other type, their score does NOT increase.
+* When a player clicks on a game item that has not yet been clicked upon, the item displays either:
+    * a green check, if the item has type 'litter'
+    * a red X, otherwise
+* When a player clicks on a game item that has already been clicked upon, nothing changes with the item's display
+
+Each `GameItem` component should track whether it has been spotted using an event handler. You will need to update the `render` function as well to use the appropriate CSS classes to indicate whether the spotted item was litter or not.
+
+### Wave 3 - Scoring Points
+For this wave you will finalize the game logic by keeping score. The game's scoring logic is based entirely on what type of item was clicked upon:
+
+* When a player clicks on a game item that has the type 'litter', their score should increase by 1 point
+* When a player clicks on a game item that has any other type, their score does NOT increase
 
 In order to implement the above logic you will need to modify both the `GameItem` and `App` components.
 
 The `App` component should have the code that actually updates the score, because it is the component where that value is stored in `state`. However, the `GameItem` component is the only one that can actually handle the click event for that specific item, so you will need to write code to connect the two components.
-
-### Wave 3 - Item State
-For this wave you will finalize the game logic by preventing players from earning more than one point per litter item. Our recommended way of implementing this game mechanic is to have each `GameItem` keep track of whether it has already been "spotted" (clicked upon).
-
-* When a player clicks on a game item that has not yet been clicked upon, their score increases according to the rules in Wave 2.
-* When a player clicks on a game item that has already been clicked upon, nothing happens.
-
-#### Optional
-Present some kind of visual indication to the player when they've already clicked upon a game item. There are CSS classes already provided for this, although they're what might be kindly referred to as "programmer art" so you may want to improve the visual design as well.
 
 ## Attribution
 The original version of this assignment was based off a "whack-a-mole" game from [Code Platoon](https://codeplatoon.org/). Versions since C10 are no longer based upon that scaffold.
