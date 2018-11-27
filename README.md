@@ -48,6 +48,13 @@ In order to implement the above logic you will need to modify both the `GameItem
 
 The `App` component should have the code that actually updates the score, because it is the component where that value is stored in `state`. However, the `GameItem` component is the only one that can actually handle the click event for that specific item, so you will need to write code to connect the two components.
 
+## Debugging Tips
+* Don't play this in Firefox, it was only optimized for Chrome and according to a 15-second check, FF hates it.
+* You can switch the code in the `App` component's constructor to have it spawn only one game item (also turn off the infinite spawner).
+* If you need to debug game items and they're moving too quick to view, you can slow down their animation by changing the animation time on line 33 in `src/App.css`. **Note**: If you make this longer than 10 seconds, you will need to update the item lifetime in `src/App.js` on line 21 to match whatever animation time you set.
+* In Chrome DevTools you can pause the JavaScript execution by pressing the pause button in the upper-right in the Sources tab. This will stop the game from creating or destroying game items (until you unpause at which point they all get destroyed).
+* Also in Chrome DevTools if you select the three dots menu in the upper-right corner and select More Tools... > Animations, a new tab appears in the bottom panel. If you can't see the bottom panel press escape. In the Animations tab you can use the buttons at the top to pause or slow down the animation speed (works best when JS is also paused).
+
 ## Attribution
 The original version of this assignment was based off a "whack-a-mole" game from [Code Platoon](https://codeplatoon.org/). Versions since C10 are no longer based upon that scaffold.
 
