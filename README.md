@@ -21,7 +21,7 @@ The state in the top-level component, `App`, contains two items:
 ### Baseline
 Review the provided code in both `src/App.js` and `src/components/GameItem.js`. Within the `App` component it is not necessary to review any of the code other than the `constructor` and `render` functions. Add comments to the code when you've read through it and have begun to understand it.
 
-Check out a completed version of the game [here](#). Start the game with `npm start` and get a feel for how it works without any of the game logic implemented. 
+Check out a completed version of the game [here](https://adagold.github.io/litter-patrol). Start the game with `npm start` and get a feel for how it works without any of the game logic implemented. 
 
 ### Wave 1 - Item Types
 For this wave you will need to update the `GameItem` component to display the correct icon for each item. Consider what data from the `App` component we have which might be useful for that code.
