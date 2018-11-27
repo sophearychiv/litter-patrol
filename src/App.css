@@ -1,9 +1,5 @@
-.App {
-  text-align: center;
-}
-
 body {
-  background-color: #283618;
+  background-color: #58eae9;
   overflow: hidden;
 }
 
@@ -20,9 +16,6 @@ body {
 .logo {
   margin: 10vh auto 0 auto;
   display: block;
-}
-
-.game {
 }
 
 .level {
