@@ -54,12 +54,24 @@ body {
   display: block;
 }
 
-.spotted-good {
-  background-color: rgba(0,255,0,0.3);
+/* Assign this class when a litter item is clicked */
+.spotted-litter::before {
+    content: '✓';
+    position: absolute;
+    font-size: 12rem;
+    text-align: center;
+    width: 100%;
+    color: green;
 }
 
-.spotted-bad {
-  background-color: rgba(255,0,0,0.3);
+/* Assign this class when a non-litter item is clicked */
+.spotted-nature::before {
+    content: 'x';
+    position: absolute;
+    font-size: 12rem;
+    text-align: center;
+    width: 100%;
+    color: darkred;
 }
 
 .overall-data {
