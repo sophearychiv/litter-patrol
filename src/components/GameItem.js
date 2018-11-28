@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import ItemIcons from '../ItemIcons.js';
+import PropTypes from 'prop-types';
 
 class GameItem extends Component {
+  propTypes = {
+    height: PropTypes.number.isRequired,
+    layer: PropTypes.number.isRequired,
+  }
+
   render() {
     const itemStyle = {
       bottom: `${this.props.height}px`, // use props.height to offset from the bottom of screen
