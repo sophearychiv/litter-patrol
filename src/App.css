@@ -1,34 +1,188 @@
-.App {
-  text-align: center;
-}
-
 body {
-  background-color: #283618;
+  background-color: #58eae9;
+  overflow: hidden;
 }
 
-.bins {
-  margin: 0px auto;
-  width: 540px;
-  background-color: grey;
-  border-radius: 20%;
+.hud {
+  z-index: 1000;
+  position: absolute;
+  width: 100vw;
 }
 
-.bin {
-  width: 130px;
-  height: 130px;
-  background-color: #606C38;
-  border-radius: 50%;
-  border: 20px solid black;
-  float: left;
+.score {
+  margin-left: 2vw;
+}
+
+.logo {
+  margin: 10vh auto 0 auto;
+  display: block;
+}
+
+.level {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game-item {
+  width: 250px;
+  height: 250px;
   margin: 5px;
   cursor: pointer;
+
+  animation-duration: 4s;
+  animation-name: item-move;
+  animation-timing-function: linear;
+
+  position: absolute;
+  left: -50%;
+  display: inline;
 }
 
-.trash {
+.icon-item {
   width: 120px;
   height: 120px;
+
+  margin: 65px auto 0 auto;
+  display: block;
+}
+
+/* Assign this class when a litter item is clicked */
+.spotted-litter::before {
+    content: '✓';
+    position: absolute;
+    font-size: 12rem;
+    text-align: center;
+    width: 100%;
+    color: green;
+}
+
+/* Assign this class when a non-litter item is clicked */
+.spotted-nature::before {
+    content: 'x';
+    position: absolute;
+    font-size: 12rem;
+    text-align: center;
+    width: 100%;
+    color: darkred;
 }
 
 .overall-data {
   color: #FEFAE0;
+}
+
+@keyframes item-move {
+  from {
+    left: -20%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+/* Level background */
+.level-bg {
+  width: 100vw;
+  height: 140vh;
+  margin-top: -40vh;
+
+  background-image: url('images/background.png');
+}
+
+.level-bg-clouds-1,
+.level-bg-clouds-2,
+.level-bg-clouds-3,
+.level-bg-clouds-4,
+.level-bg-hills-1,
+.level-bg-hills-2,
+.level-bg-bushes,
+.level-bg-trees-1,
+.level-bg-trees-2,
+.level-bg-ground {
+  width: 300vw;
+  height: 140vh;
+
+  position: absolute;
+  top: -40vh;
+  left: 0;
+
+  background-repeat: repeat-x;
+
+  animation-iteration-count: infinite;
+  animation-name: bg-move;
+  animation-timing-function: linear;
+}
+
+.level-bg-clouds-1 {
+  z-index: 11;
+  background-image: url('images/clouds-1.png');
+  animation-duration: 150s;
+}
+
+.level-bg-clouds-2 {
+  z-index: 12;
+  background-image: url('images/clouds-2.png');
+  animation-duration: 140s;
+}
+
+.level-bg-clouds-3 {
+  z-index: 13;
+  background-image: url('images/clouds-3.png');
+  animation-duration: 130s;
+}
+
+.level-bg-clouds-4 {
+  z-index: 14;
+  background-image: url('images/clouds-4.png');
+  animation-duration: 120s;
+}
+
+.level-bg-hills-1 {
+  z-index: 15;
+  background-image: url('images/hills-1.png');
+  animation-duration: 90s;
+}
+
+.level-bg-hills-2 {
+  z-index: 16;
+  background-image: url('images/hills-2.png');
+  animation-duration: 80s;
+}
+
+.level-bg-bushes {
+  z-index: 17;
+  background-image: url('images/bushes.png');
+  animation-duration: 60s;
+}
+
+.level-bg-trees-1 {
+  z-index: 18;
+  background-image: url('images/trees-1.png');
+  animation-duration: 55s;
+}
+
+.level-bg-trees-2 {
+  z-index: 19;
+  background-image: url('images/trees-2.png');
+  animation-duration: 50s;
+}
+
+.level-bg-ground {
+  z-index: 20;
+  background-image: url('images/ground.png');
+  animation-duration: 18s;
+
+  /* Ground is down further to make for more play area */
+  top: -30vh;
+}
+
+@keyframes bg-move {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 300%;
+  }
 }

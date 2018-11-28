@@ -1,0 +1,18 @@
+# Litter Patrol
+Congratulations! You're submitting your assignment!
+
+## Comprehension Questions
+Question | Answer
+--- | ---
+How are events / event handlers and `this.state` connected? | 
+What are two ways to do "dynamic styling" with React? When should they be used? | 
+Much like Rails works with the HTTP request->response cycle, React works with the browser's input->output cycle. Describe React's cycle from receiving user input to outputting different page content. | 
+Compare how React and Rails' views differ. Given different circumstances, these systems have different goals. How does this impact on their design and how we are supposed to use them? | 
+What was a challenge you were able to overcome on this assignment? | 
+
+## CS Fundamentals Questions
+Question | Answer
+--- | ---
+Consider the code on the first few lines of `App.render` (it starts with `this.state.items.map`). What is the Big-O time complexity of this code, where n is the number of active game items? | 
+What part of React might benefit most from the use of specific data structure and algorithms? | 
+Consider what happens when React processes a state change from `setState` -- it must re-render all of the components that now have different content because of that change.<br>What kind of data structure are the components in, and what sort of algorithms would be appropriate for React's code to "traverse" those components?<br>Speculate wildly about what the Big-O time complexity of that code might be. | 
