@@ -4,10 +4,7 @@ import ItemIcons from '../ItemIcons.js';
 import PropTypes from 'prop-types';
 
 class GameItem extends Component {
-  propTypes = {
-    height: PropTypes.number.isRequired,
-    layer: PropTypes.number.isRequired,
-  }
+
 
   render() {
     const itemStyle = {
@@ -24,6 +21,12 @@ class GameItem extends Component {
       </div>
     );
   }
+}
+
+
+GameItem.propTypes = {
+  height: PropTypes.number.isRequired,
+  layer: PropTypes.number.isRequired,
 }
 
 export default GameItem;
