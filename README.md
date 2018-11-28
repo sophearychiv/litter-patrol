@@ -2,6 +2,8 @@
 
 In this assignment, you'll be building a litter patrol game. Get points for spotting the litter!
 
+**Due Date:** Friday, Nov. 30
+
 ## Learning Goals
 - Practice with `state` and `props`
 - Pass state data from parent component to child component as props
