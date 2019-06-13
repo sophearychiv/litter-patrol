@@ -9,19 +9,6 @@ class GameItem extends Component {
     layer: PropTypes.number.isRequired,
   }
 
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     isSpotted: false,
-  //   }
-
-  // }
-
-  // onItemClicked = (item) => {
-  //   super.onItemClicked(item)
-  // }
-
-
   onLitterClick = () => {
       this.props.markSpottedCallback(this.props.index);
   }
@@ -63,10 +50,6 @@ class GameItem extends Component {
       litterSpottedClass = "game-item";
     }
 
-    
-
-
-    // disabled={this.props.isLitterSpotted}
     return (
       <div onClick={this.onLitterClick} className={litterSpottedClass} style={itemStyle}>
         <img src={icon} alt="Item" className="icon-item"></img>

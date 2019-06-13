@@ -34,7 +34,7 @@ class App extends Component {
     // this.state.items.push(testItem);
 
     // Uncomment this to automatically spawn new items
-    console.log(this.enableSpawner());
+    this.enableSpawner();
 
   }
 
@@ -42,12 +42,18 @@ class App extends Component {
     let updatedItems = this.state.items;
     if (updatedItems[itemIndex].type === "litter") {
       updatedItems[itemIndex].isSpotted = true;
+      this.increasePoints();
     } else {
       updatedItems[itemIndex].isSpotted = false;
     }
     this.setState({items: updatedItems});
   }
 
+  increasePoints = () => {
+    let updatedPoints = this.state.points;
+    updatedPoints += 1;
+    this.setState({points: updatedPoints});
+  }
 
   render() {
     const items = this.state.items.map((item, i) => {
@@ -60,7 +66,7 @@ class App extends Component {
                index={i}
                itemType={item.type}
                isLitterSpotted={item.isSpotted}
-                markSpottedCallback={this.markLitterSpotted}
+               markSpottedCallback={this.markLitterSpotted}
              />;
     });
 
