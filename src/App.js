@@ -5,7 +5,7 @@ import GameItem from './components/GameItem.js';
 import logo from './images/logo.png';
 
 class App extends Component {
-  config = {
+   config = {
     itemTypes: {
       // type: spawn rate (weighting)
       litter:  20,
@@ -30,8 +30,8 @@ class App extends Component {
     };
 
     // Uncomment this to spawn a single test item
-    //const testItem = this.spawnItem(Date.now());
-    //this.state.items.push(testItem);
+    // const testItem = this.spawnItem(Date.now());
+    // this.state.items.push(testItem);
 
     // Uncomment this to automatically spawn new items
     this.enableSpawner();
@@ -41,6 +41,7 @@ class App extends Component {
 
   onItemClicked = () => {
     // Fill this in!
+    console.log("hi");
   }
 
   render() {
@@ -51,6 +52,8 @@ class App extends Component {
                key={item.id}            // Key - to help React with performance
 
                // Additional props (event callbacks, etc.) can be passed here
+               itemType={item.type}
+               onItemClicked={this.onItemClicked}
              />;
     });
 
