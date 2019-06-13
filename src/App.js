@@ -34,15 +34,20 @@ class App extends Component {
     // this.state.items.push(testItem);
 
     // Uncomment this to automatically spawn new items
-    this.enableSpawner();
+    console.log(this.enableSpawner());
 
-    console.log(this.state);
   }
 
-  onItemClicked = () => {
-    // Fill this in!
-    console.log("hi");
+  markLitterSpotted = (itemIndex) => {
+    let updatedItems = this.state.items;
+    if (updatedItems[itemIndex].type === "litter") {
+      updatedItems[itemIndex].isSpotted = true;
+    } else {
+      updatedItems[itemIndex].isSpotted = false;
+    }
+    this.setState({items: updatedItems});
   }
+
 
   render() {
     const items = this.state.items.map((item, i) => {
@@ -52,8 +57,10 @@ class App extends Component {
                key={item.id}            // Key - to help React with performance
 
                // Additional props (event callbacks, etc.) can be passed here
+               index={i}
                itemType={item.type}
-               onItemClicked={this.onItemClicked}
+               isLitterSpotted={item.isSpotted}
+                markSpottedCallback={this.markLitterSpotted}
              />;
     });
 
@@ -67,6 +74,7 @@ class App extends Component {
         <section className="level">
           { this.levelBackground() }
           { items }
+          
         </section>
 
       </div>
@@ -120,8 +128,9 @@ class App extends Component {
 
     const expiration = time + this.config.itemLifetime;
     const height = Math.random() * this.config.spawnHeight + this.config.spawnFloor;
+    let isSpotted = null;
 
-    return {id, type, expiration, height};
+    return {id, type, expiration, height, isSpotted};
   }
 
   randomType() {

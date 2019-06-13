@@ -9,14 +9,22 @@ class GameItem extends Component {
     layer: PropTypes.number.isRequired,
   }
 
-  // constructor(props){
-  //   super(props);
+  // constructor(){
+  //   super();
   //   this.state = {
-  //     items: this.items,
+  //     isSpotted: false,
   //   }
 
   // }
 
+  // onItemClicked = (item) => {
+  //   super.onItemClicked(item)
+  // }
+
+
+  onLitterClick = () => {
+      this.props.markSpottedCallback(this.props.index);
+  }
 
   render() {
     const itemStyle = {
@@ -25,7 +33,6 @@ class GameItem extends Component {
     };
 
     // Update this to select the correct icon for each item
-    // const icon = ItemIcons.rock;
     let icon;
     if (this.props.itemType === "rock") {
       icon = ItemIcons.rock;
@@ -46,10 +53,22 @@ class GameItem extends Component {
     if (this.props.itemType === "mushroom") {
       icon = ItemIcons.mushroom;
     }
-   
 
+    let litterSpottedClass;
+    if (this.props.isLitterSpotted === true) {
+      litterSpottedClass = "game-item spotted-litter";
+    } else if (this.props.isLitterSpotted === false) {
+      litterSpottedClass = "game-item spotted-nature";
+    } else {
+      litterSpottedClass = "game-item";
+    }
+
+    
+
+
+    // disabled={this.props.isLitterSpotted}
     return (
-      <div onClick={this.props.onItemClicked} className="game-item" style={itemStyle}>
+      <div onClick={this.onLitterClick} className={litterSpottedClass} style={itemStyle}>
         <img src={icon} alt="Item" className="icon-item"></img>
       </div>
     );
