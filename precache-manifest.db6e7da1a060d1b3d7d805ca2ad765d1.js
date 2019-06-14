@@ -16,20 +16,20 @@ self.__precacheManifest = [
     "url": "/litter-patrol/static/js/runtime~main.2b5fd111.js"
   },
   {
-    "revision": "83c4acd2d5e97821735846455fc38fcb",
-    "url": "/litter-patrol/static/media/background.83c4acd2.png"
-  },
-  {
     "revision": "3c04d98c9f0fe334f1151d23f6a38265",
     "url": "/litter-patrol/static/media/clouds-1.3c04d98c.png"
   },
   {
-    "revision": "7198032280e50a7d97a7506e268d5a9a",
-    "url": "/litter-patrol/static/media/clouds-3.71980322.png"
+    "revision": "83c4acd2d5e97821735846455fc38fcb",
+    "url": "/litter-patrol/static/media/background.83c4acd2.png"
   },
   {
     "revision": "5ccc31c7f71649d97b6f46a70a43799e",
     "url": "/litter-patrol/static/media/clouds-2.5ccc31c7.png"
+  },
+  {
+    "revision": "7198032280e50a7d97a7506e268d5a9a",
+    "url": "/litter-patrol/static/media/clouds-3.71980322.png"
   },
   {
     "revision": "65f7c026c185da0ef809b253e8244a74",
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/litter-patrol/static/media/clouds-4.367537d3.png"
   },
   {
-    "revision": "b88bdd80f2c7c94bf0da4f92b2f6ee11",
-    "url": "/litter-patrol/static/media/bushes.b88bdd80.png"
-  },
-  {
     "revision": "ca68c20d5092fa895684d64b606e070d",
     "url": "/litter-patrol/static/media/trees-1.ca68c20d.png"
+  },
+  {
+    "revision": "b88bdd80f2c7c94bf0da4f92b2f6ee11",
+    "url": "/litter-patrol/static/media/bushes.b88bdd80.png"
   },
   {
     "revision": "baa0a430c166400b9bba756f2b1d6336",

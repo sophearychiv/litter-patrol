@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/litter-patrol/precache-manifest.5cb5313beae123031a8ca4e410cbc5c3.js"
+  "/litter-patrol/precache-manifest.db6e7da1a060d1b3d7d805ca2ad765d1.js"
 );
 
 workbox.clientsClaim();
