@@ -1,7 +1,7 @@
 {
-  "main.css": "/litter-patrol/static/css/main.b9c65b67.chunk.css",
-  "main.js": "/litter-patrol/static/js/main.498f9992.chunk.js",
-  "main.js.map": "/litter-patrol/static/js/main.498f9992.chunk.js.map",
+  "main.css": "/litter-patrol/static/css/main.fafbea55.chunk.css",
+  "main.js": "/litter-patrol/static/js/main.100ad8d1.chunk.js",
+  "main.js.map": "/litter-patrol/static/js/main.100ad8d1.chunk.js.map",
   "static/js/1.fb594e23.chunk.js": "/litter-patrol/static/js/1.fb594e23.chunk.js",
   "static/js/1.fb594e23.chunk.js.map": "/litter-patrol/static/js/1.fb594e23.chunk.js.map",
   "runtime~main.js": "/litter-patrol/static/js/runtime~main.2b5fd111.js",
@@ -12,8 +12,8 @@
   "static/media/flower.png": "/litter-patrol/static/media/flower.89a9414a.png",
   "static/media/mushroom.png": "/litter-patrol/static/media/mushroom.092ee2df.png",
   "static/media/logo.png": "/litter-patrol/static/media/logo.68803946.png",
-  "static/css/main.b9c65b67.chunk.css.map": "/litter-patrol/static/css/main.b9c65b67.chunk.css.map",
+  "static/css/main.fafbea55.chunk.css.map": "/litter-patrol/static/css/main.fafbea55.chunk.css.map",
   "index.html": "/litter-patrol/index.html",
-  "precache-manifest.16c5436f4cda6b120b4cbe3620877b7e.js": "/litter-patrol/precache-manifest.16c5436f4cda6b120b4cbe3620877b7e.js",
+  "precache-manifest.5cb5313beae123031a8ca4e410cbc5c3.js": "/litter-patrol/precache-manifest.5cb5313beae123031a8ca4e410cbc5c3.js",
   "service-worker.js": "/litter-patrol/service-worker.js"
 }
