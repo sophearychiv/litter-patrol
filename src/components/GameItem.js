@@ -7,6 +7,10 @@ class GameItem extends Component {
   static propTypes = {
     height: PropTypes.number.isRequired,
     layer: PropTypes.number.isRequired,
+    isLitterSpotted: PropTypes.bool,
+    itemType: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+    markSpottedCallback: PropTypes.func.isRequired,
   }
 
   onLitterClick = () => {
