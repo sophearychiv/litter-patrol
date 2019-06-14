@@ -42,6 +42,8 @@ class App extends Component {
     this.setState({
       onPlay: true,
       hasBeenPlayed: false,
+      points: 0, // so that after the player has played the game once and click
+                //"Start Game" again, the points will be reset to 0
     });
   }
 
