@@ -27,15 +27,31 @@ class App extends Component {
     this.state = {
       items: [],
       points: 0,
+      onPlay: false,
+      hasBeenPlayed: false,
     };
 
     // Uncomment this to spawn a single test item
     // const testItem = this.spawnItem(Date.now());
     // this.state.items.push(testItem);
+  }
 
+  startGame = () => {
     // Uncomment this to automatically spawn new items
     this.enableSpawner();
+    this.setState({
+      onPlay: true,
+      hasBeenPlayed: false,
+    });
+  }
 
+  stopGame = () => {
+    // Uncomment this to automatically spawn new items
+    this.disableSpawner();
+    this.setState({
+      onPlay: false,
+      hasBeenPlayed: true,
+    });
   }
 
   markLitterSpotted = (itemIndex) => {
@@ -56,6 +72,20 @@ class App extends Component {
   }
 
   render() {
+
+    let startGame = "start-game";
+    let stopGame = "stop-game hide";
+
+    if (this.state.onPlay === true) {
+       startGame = "start-game hide";
+       stopGame = "stop-game";
+    }
+
+    let totalPoints = "total-points hide";
+    if (this.state.hasBeenPlayed === true) {
+      totalPoints = "total-points";
+    }
+    
     const items = this.state.items.map((item, i) => {
       return <GameItem
                height={item.height}     // Height - used for a CSS style to position on the screen
@@ -74,7 +104,18 @@ class App extends Component {
       <div className="game">
         <section className="hud">
           <h2 className="score">Litter Spotted: { this.state.points }</h2>
+          <div onClick={this.stopGame} className={stopGame}>
+            <h3>Stop Game</h3>
+          </div>
           <img className="logo" src={logo} alt="Litter Patrol logo" />
+          <div onClick={this.startGame} className={startGame}>
+            <h1>Start Game</h1>
+          </div>
+
+          <div className={totalPoints}>
+            <h3>Total Number of Litters Spotted: {this.state.points} </h3>
+          </div>
+
         </section>
 
         <section className="level">
@@ -82,6 +123,8 @@ class App extends Component {
           { items }
           
         </section>
+
+        
 
       </div>
     );
@@ -164,6 +207,10 @@ class App extends Component {
 
   enableSpawner() {
     this.spawnItems = true;
+  }
+
+  disableSpawner() {
+    this.spawnItems = false;
   }
 
   levelBackground() {

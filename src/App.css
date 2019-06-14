@@ -9,6 +9,7 @@ body {
   width: 100vw;
 }
 
+
 .score {
   margin-left: 2vw;
 }
@@ -16,6 +17,30 @@ body {
 .logo {
   margin: 10vh auto 0 auto;
   display: block;
+}
+
+.start-game {
+  cursor: pointer;
+  margin-left: 37%;
+  color: rgb(12, 90, 12);
+  font-size: 3em;
+}
+
+.hide {
+  display: none;
+}
+
+.stop-game {
+  cursor: pointer;
+  margin-left: 40%;
+  color: rgb(12, 90, 12);
+  font-size: 2em;
+}
+
+.total-points {
+  margin-left: 28%;
+  color: rgb(8, 8, 8);
+  font-size: 2em;
 }
 
 .level {
